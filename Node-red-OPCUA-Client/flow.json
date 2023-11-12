@@ -1,0 +1,258 @@
+[
+    {
+        "id": "0b9f908c8ed23f88",
+        "type": "inject",
+        "z": "1aac67547c388a8c",
+        "name": "1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=3;i=1008,datatype:Double",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "a4b67905846f0dfd"
+            ]
+        ]
+    },
+    {
+        "id": "a4b67905846f0dfd",
+        "type": "OpcUa-Client",
+        "z": "1aac67547c388a8c",
+        "endpoint": "f204a3c9ca9c3998",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "151e2d67aaa13db0",
+                "e4ba553965897493",
+                "15dbb7e8e1f4ff58",
+                "979c5b1b2a02f160",
+                "b27adc83e6132ae4",
+                "4d3a9c29a3195404"
+            ]
+        ]
+    },
+    {
+        "id": "151e2d67aaa13db0",
+        "type": "debug",
+        "z": "1aac67547c388a8c",
+        "name": "debug 35",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e4ba553965897493",
+        "type": "function",
+        "z": "1aac67547c388a8c",
+        "name": "function 74",
+        "func": "var v = msg.payload;\n\nif (v == 3){\n    msg.payload = true;\n}\nelse msg.payload = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 180,
+        "wires": [
+            [
+                "1d1671f2ed57acf8"
+            ]
+        ]
+    },
+    {
+        "id": "1d1671f2ed57acf8",
+        "type": "s7 out",
+        "z": "1aac67547c388a8c",
+        "endpoint": "a59e6cdc532422e4",
+        "variable": "M0.2",
+        "name": "",
+        "x": 870,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "15dbb7e8e1f4ff58",
+        "type": "function",
+        "z": "1aac67547c388a8c",
+        "name": "function 75",
+        "func": "var v = msg.payload;\n\nif (v == 4){\n    msg.payload = true;\n}\nelse msg.payload = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 220,
+        "wires": [
+            [
+                "63100e8c7a947273"
+            ]
+        ]
+    },
+    {
+        "id": "63100e8c7a947273",
+        "type": "s7 out",
+        "z": "1aac67547c388a8c",
+        "endpoint": "a59e6cdc532422e4",
+        "variable": "M0.3",
+        "name": "",
+        "x": 870,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "979c5b1b2a02f160",
+        "type": "function",
+        "z": "1aac67547c388a8c",
+        "name": "function 76",
+        "func": "var v = msg.payload;\n\nif (v == 1){\n    msg.payload = true;\n}\nelse msg.payload = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "9af7c6fce753541a"
+            ]
+        ]
+    },
+    {
+        "id": "9af7c6fce753541a",
+        "type": "s7 out",
+        "z": "1aac67547c388a8c",
+        "endpoint": "a59e6cdc532422e4",
+        "variable": "M0.0",
+        "name": "",
+        "x": 870,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b27adc83e6132ae4",
+        "type": "function",
+        "z": "1aac67547c388a8c",
+        "name": "function 77",
+        "func": "var v = msg.payload;\n\nif (v == 2){\n    msg.payload = true;\n}\nelse msg.payload = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "321899aa86f8a19e"
+            ]
+        ]
+    },
+    {
+        "id": "321899aa86f8a19e",
+        "type": "s7 out",
+        "z": "1aac67547c388a8c",
+        "endpoint": "a59e6cdc532422e4",
+        "variable": "M0.1",
+        "name": "",
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f204a3c9ca9c3998",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://Shams:53530/OPCUA/SimulationServer",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "a59e6cdc532422e4",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.2",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "cafbfade452e80c9",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "M0.0",
+                "name": "M0.0"
+            },
+            {
+                "addr": "M0.1",
+                "name": "M0.1"
+            },
+            {
+                "addr": "M0.2",
+                "name": "M0.2"
+            },
+            {
+                "addr": "M0.3",
+                "name": "M0.3"
+            }
+        ]
+    },
+    {
+        "id": "cafbfade452e80c9",
+        "type": "mpi-s7 adapter",
+        "name": "",
+        "timeout": "10000",
+        "adapter": "usb/bus:2/port:10",
+        "busconfigmode": "s7-300/400",
+        "busaddr": "0",
+        "maxbusaddr": "31",
+        "busspeed": "BAUD_187k5",
+        "busparams": ""
+    }
+]
