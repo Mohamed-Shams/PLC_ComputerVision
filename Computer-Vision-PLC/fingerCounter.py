@@ -7,7 +7,7 @@ import sys
 
 
     # Connect to OPC UA server
-url = "opc.tcp://Shams:53530/OPCUA/SimulationServer"  # Replace with OPC UA server URL
+url = "opc.tcp://PC:PORT/OPCUA/SimulationServer"  # Replace with OPC UA server URL
 
 try:
         client = Client(url)
