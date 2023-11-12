@@ -2,6 +2,8 @@
 
 This document outlines the steps required to successfully integrate the demo into the FIO Scene using PLC code, Prosys Integer objects, Python code, and Node-red. Please follow these instructions carefully to ensure a smooth setup and execution.
 
+Project Video: https://www.youtube.com/watch?v=EkICnDUIZXo
+
 ## Prerequisite Python Packages
 
 Before you begin, ensure that you have the following Python packages installed:
